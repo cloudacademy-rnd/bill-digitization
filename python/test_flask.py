@@ -1,4 +1,4 @@
-from flaskr import app
+from flaskr import main
 
 def test_init_page():
     resp = app.test_client().get('/')
