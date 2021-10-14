@@ -26,4 +26,4 @@ jobs:
     - name: Test with pytest
       run: |
         cd python
-        pytest -v tests/test_flask.py
+        pytest
