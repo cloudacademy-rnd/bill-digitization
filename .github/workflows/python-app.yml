@@ -10,8 +10,8 @@ on:
     branches: [ develop ]
 
 jobs:
-  runs-on: ubuntu-latest
-  test:
+  setup:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -23,7 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         if [ -f python/requirements.txt ]; then pip install -r python/requirements.txt; fi
-    - name: Test with pytest
-      run: |
-        cd python
-        pytest
+  pytest:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test with pytest
+        run: |
+          cd python
+          pytest
