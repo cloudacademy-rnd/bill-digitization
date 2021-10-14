@@ -37,7 +37,7 @@ jobs:
     - name: Login to Docker Registry
       uses: docker/login-action@v1
       with:
-        username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+        username: ${{ secrets.DOCKER_REGISTRY_LOGIN }}
         password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
     - name: Set up Docker Buildx
       id: buildx
@@ -49,7 +49,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_REGISTRY_USERNAME }}/bill-digitization:latest
+        tags: ${{ secrets.DOCKER_REGISTRY_LOGIN }}/bill-digitization:latest
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
 
