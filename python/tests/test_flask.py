@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 from flaskr import app
 
 def test_init_page():
