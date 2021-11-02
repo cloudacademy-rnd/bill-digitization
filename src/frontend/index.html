@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">UPLOAD AND DRAGDROP IMAGE BELOW</h1>
+        <img class="arrow" src="./assets/images/arrow.svg" alt="">
+        <div class="box">
+            <input type="file" name="file-upload" id="file-upload" class="file_upload" ref="input"
+                accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />
+            <div class="image_container">
+                <img id="image-review" class="image-review" src="#" alt="image" />
+                <img id="close-icon" src="./assets/images/close_img.svg" alt="" class="close_icon"/>
+            </div>
+            <span id="text-in-box"><span class="link" id='link_upload'>Browser</span> your computer</span>
+        </div>
+        <button class="button">Submit</button>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
